@@ -5,8 +5,11 @@ PCF8574 first(0x27);
 PCF8574 second(0x20);
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
+  for(int i = 0; i <= 7; i++){
+    first.pinMode(P{i}, OUTPUT);
+    second.pinMode(P{i}, OUTPUT);
+  }
 }
 
 void loop() {
